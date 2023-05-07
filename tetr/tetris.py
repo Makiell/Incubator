@@ -29,7 +29,6 @@ class Text:
                             text=f'{self.app.tetris.score}', fgcolor='white',
                             size=TILE_SIZE * 1.8)
         self.font.render_to(self.app.screen, (WIN_W * 0.64,950), text=f'record: {self.app.tetris.record}', fgcolor='orange', size=TILE_SIZE*0.7, bgcolor='black')
-        print(self.app.tetris.last)
         self.font.render_to(self.app.screen, (0,0), text=f'Last score: {self.app.tetris.last}', fgcolor='orange', size=TILE_SIZE*0.7, bgcolor='black')
         
 
@@ -130,7 +129,6 @@ class Tetris:
                              (x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE), 1)
 
     def update(self):
-        print((self.app.tetris.record, self.app.tetris.last))
         trigger = [self.app.anim_trigger, self.app.fast_anim_trigger][self.speed_up]
         if trigger:
             self.check_full_lines()
